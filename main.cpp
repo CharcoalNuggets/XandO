@@ -43,16 +43,16 @@ int main()
     else
     {
       board[row][column] = turn;
-    }
-    if (turn == X)
-    {
-      turn = O;
-    }
-    else 
-    {
-      turn = X;
-    }  
     
+      if (turn == X)
+      {
+        turn = O;
+      }
+      else 
+      {
+        turn = X;
+      }    
+    }
     //TODO: Place the piece and swap turns
     //Outline
     //1. When neither of the (above) if nor else if statements are true, then...
