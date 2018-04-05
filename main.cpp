@@ -18,7 +18,7 @@ int main()
                                {BLANK, BLANK, BLANK},
                                {BLANK, BLANK, BLANK}};
 
-  char turn = X; //Player X always goes first
+  char turn = X, winner = ' '; //Player X always goes first
   int row;
   int column;
   bool playing = true; //Continue playing by default
@@ -43,16 +43,8 @@ int main()
     else
     {
       board[row][column] = turn;
-    
-      if (turn == X)
-      {
-        turn = O;
-      }
-      else 
-      {
-        turn = X;
-      }    
     }
+    
     //TODO: Place the piece and swap turns
     //Outline
     //1. When neither of the (above) if nor else if statements are true, then...
@@ -71,8 +63,34 @@ int main()
         cout<<" ";
       }
       cout<<endl;
-    }  
-     
+    }
+
+    if((board[0][0] == turn && board[0][1] == turn && board[0][2] == turn) 
+    || (board[0][0] == turn && board[1][0] == turn && board[2][0] == turn) 
+    || (board[0][0] == turn && board[1][1] == turn && board[2][2] == turn) 
+    || (board[0][2] == turn && board[1][2] == turn && board[2][2] == turn) 
+    || (board[2][0] == turn && board[2][1] == turn && board[2][2] == turn)
+    || (board[0][1] == turn && board[1][1] == turn && board[2][1] == turn)
+    || (board[1][0] == turn && board[1][1] == turn && board[1][2] == turn)
+    || (board[0][2] == turn && board[1][1] == turn && board[2][0] == turn))
+    {
+      cout<< "Winner is "<< turn <<endl;
+    }
+
+    
+    
+      
+    if(turn == X)
+    {
+      turn = O;
+    }
+
+    else
+    {
+      turn = X;
+    }
+    
+
 
     //TODO: Print the current board
     //Outline
