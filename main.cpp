@@ -1,4 +1,4 @@
-//Author:
+//Author: Daniel Gin
 #include <iostream>
 
 using namespace std;
@@ -75,6 +75,7 @@ int main()
     || (board[0][2] == turn && board[1][1] == turn && board[2][0] == turn))
     {
       cout<< "Winner is "<< turn <<endl;
+      playing = false;
     }
 
     
